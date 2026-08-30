@@ -89,22 +89,25 @@ export async function submitContactInquiry(formData: FormData) {
     const ip = headerList.get('x-forwarded-for')?.split(',')[0] || headerList.get('x-real-ip') || null;
 
     // 4. Save lead to Supabase
-    const supabase = createAdminClient();
+    try {
+      const supabase = createAdminClient();
+      const { error: dbError } = await supabase.from('contact_messages').insert({
+        name,
+        email,
+        company,
+        service,
+        budget,
+        message,
+        status: 'new',
+        ip_address: ip,
+      });
 
-    const { error: dbError } = await supabase.from('contact_messages').insert({
-      name,
-      email,
-      company,
-      service,
-      budget,
-      message,
-      status: 'new',
-      ip_address: ip,
-    });
-
-    if (dbError) {
-      console.error('Supabase contact insertion error:', dbError);
-      return { error: 'Could not store inquiry in database. Please try again or reach out directly.' };
+      if (dbError) {
+        console.error('Supabase contact insertion error:', dbError);
+        // Fallback: Continue to send email even if DB fails
+      }
+    } catch (dbInitError) {
+      console.warn('Supabase client failed to initialize (missing keys):', dbInitError);
     }
 
     // 5. Send Resend notification (non-blocking)
@@ -120,8 +123,8 @@ export async function submitContactInquiry(formData: FormData) {
     });
 
     return { success: true };
-  } catch (error) {
+  } catch (error: any) {
     console.error('Submit contact inquiry error:', error);
-    return { error: 'An unexpected server error occurred. Please try again.' };
+    return { error: `An unexpected server error occurred: ${error?.message || 'Unknown error'}` };
   }
 }
