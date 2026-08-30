@@ -1,0 +1,48 @@
+<svg width="32" height="32" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nexa-stem" x1="20" y1="25" x2="55" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00A3FF" />
+      <stop offset="50%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="nexa-diag" x1="35" y1="30" x2="85" y2="75" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+    <linearGradient id="nexa-orange" x1="70" y1="25" x2="95" y2="95" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="60%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+    <linearGradient id="nexa-fold" x1="55" y1="60" x2="80" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+  </defs>
+
+  {/* Top orbital gold track */}
+  <path d="M 58 18 C 75 16 90 24 96 35" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+  <circle cx="96.5" cy="35" r="4" fill="#F59E0B" />
+
+  {/* Left circuit tracks */}
+  <path d="M 37 46 C 25 46 22 52 18 52" stroke="#0284C7" stroke-width="3" stroke-linecap="round" />
+  <circle cx="17.5" cy="52" r="4" fill="#0284C7" />
+
+  <path d="M 39 70 C 23 70 20 63 15 63" stroke="#0284C7" stroke-width="3" stroke-linecap="round" />
+  <circle cx="14.5" cy="63" r="4" fill="#0284C7" />
+
+  {/* Gear teeth on right */}
+  <path d="M 85 42 L 89 44 L 92 42 L 95 44 L 94 48 L 98 52 L 102 52 L 102 56 L 98 58 L 98 64 L 102 66 L 101 70 L 97 71 L 95 76 L 98 80 L 95 83 L 90 82 L 87 86 L 82 85" stroke="url(#nexa-orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9" />
+
+  {/* Right orange stem */}
+  <rect x="73" y="28" width="13" height="52" rx="6.5" fill="url(#nexa-orange)" />
+
+  {/* Lower fold */}
+  <path d="M 52 56 L 85 79 C 89 82 89 88 84 92 C 79 96 73 95 68 90 L 51 68 Z" fill="url(#nexa-fold)" />
+
+  {/* Diagonal ribbon fold */}
+  <path d="M 37 28 L 81 68 L 74 76 L 37 36 Z" fill="url(#nexa-diag)" opacity="0.95" />
+
+  {/* Left blue-purple stem */}
+  <path d="M 37 28 C 43 28 47 32 47 38 L 47 79 C 47 88 41 93 35 93 C 29 93 25 87 25 79 L 25 38 C 25 32 30 28 37 28 Z" fill="url(#nexa-stem)" />
+</svg>
