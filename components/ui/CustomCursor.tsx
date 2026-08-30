@@ -75,7 +75,7 @@ export default function CustomCursor() {
           opacity: isVisible ? 1 : 0,
         }}
         transition={{ duration: 0.18, ease: 'easeOut' }}
-        className={`w-9 h-9 rounded-full border transition-colors duration-200 ${
+        className={`absolute top-0 left-0 w-9 h-9 rounded-full border transition-colors duration-200 ${
           isHovered
             ? 'border-blue-500/80 bg-blue-500/15 shadow-[0_0_20px_rgba(59,130,246,0.35)] backdrop-blur-[0.5px]'
             : 'border-blue-500/40 bg-blue-500/5 shadow-[0_0_10px_rgba(59,130,246,0.15)]'
@@ -95,7 +95,7 @@ export default function CustomCursor() {
           opacity: isVisible ? 1 : 0,
         }}
         transition={{ duration: 0.1 }}
-        className="w-2 h-2 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 shadow-sm"
+        className="absolute top-0 left-0 w-2 h-2 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 shadow-sm"
       />
     </div>
   );
