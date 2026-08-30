@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
 import FloatingAssistant from '@/components/ai-assistant/FloatingAssistant';
+import CustomCursor from '@/components/ui/CustomCursor';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -70,6 +71,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <FloatingAssistant />
+        <CustomCursor />
       </body>
     </html>
   );
