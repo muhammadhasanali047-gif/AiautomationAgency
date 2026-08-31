@@ -11,6 +11,10 @@ import {
   ShieldCheck,
   Clock,
   UserCheck,
+  MapPin,
+  Phone,
+  Mail,
+  MessageCircle,
 } from 'lucide-react';
 import { submitContactInquiry } from '@/app/actions/contact';
 
@@ -37,26 +41,10 @@ const services = [
   'Complete Agency Package (All 3 Disciplines)',
   'Other / Custom Technical Scope',
 ];
-
-const budgetRanges = [
-  'Under $500',
-  '$500–$1,000',
-  '$1,000–$2,500',
-  '$2,500–$5,000',
-  '$5,000+',
-];
-
 function ContactForm() {
-  const searchParams = useSearchParams();
-  const specialistParam = searchParams.get('specialist');
-  const serviceParam = searchParams.get('service');
-
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    company: '',
-    service: 'AI Automation & Autonomous Agents',
-    budget: '$1,000–$2,500',
+    phone: '',
     message: '',
     hp_field: '', // Honeypot field
   });
@@ -64,36 +52,6 @@ function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
-  // Prepopulate according to arriving specialist or service query
-  useEffect(() => {
-    if (specialistParam === 'hassan') {
-      setFormData((prev) => ({ ...prev, service: 'AI Automation & Autonomous Agents' }));
-    } else if (specialistParam === 'saqlain') {
-      setFormData((prev) => ({ ...prev, service: 'Email Marketing & Outreach Campaigns' }));
-    } else if (specialistParam === 'hamdan') {
-      setFormData((prev) => ({ ...prev, service: 'Full-Stack Web Development (Next.js)' }));
-    } else if (serviceParam) {
-      if (services.includes(serviceParam)) {
-        setFormData((prev) => ({ ...prev, service: serviceParam }));
-      } else if (serviceParam.toLowerCase().includes('ai')) {
-        setFormData((prev) => ({ ...prev, service: 'AI Automation & Autonomous Agents' }));
-      } else if (serviceParam.toLowerCase().includes('email')) {
-        setFormData((prev) => ({ ...prev, service: 'Email Marketing & Outreach Campaigns' }));
-      } else if (serviceParam.toLowerCase().includes('web') || serviceParam.toLowerCase().includes('stack')) {
-        setFormData((prev) => ({ ...prev, service: 'Full-Stack Web Development (Next.js)' }));
-      }
-    }
-  }, [specialistParam, serviceParam]);
-
-  const getSpecialistLabel = () => {
-    if (specialistParam === 'hassan') return 'Muhammad Hassan (AI Automation & Chatbot Specialist)';
-    if (specialistParam === 'saqlain') return 'Muhammad Saqlain (Email Marketing Manager)';
-    if (specialistParam === 'hamdan') return 'Muhammad Hamdan (Full-Stack Developer)';
-    return null;
-  };
-
-  const specialistLabel = getSpecialistLabel();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -104,15 +62,14 @@ function ContactForm() {
 
     const payload = new FormData();
     payload.append('name', formData.name);
-    payload.append('email', formData.email);
-    payload.append('company', formData.company);
-    payload.append('service', formData.service);
-    payload.append('budget', formData.budget);
+    // Since our backend expects an email and service/budget, we map phone to email for now
+    payload.append('email', `${formData.phone.replace(/[^0-9]/g, '')}@whatsapp.local`); 
+    payload.append('company', 'N/A');
+    payload.append('service', 'Other');
+    payload.append('budget', 'Under $500');
     payload.append(
       'message',
-      specialistLabel
-        ? `[Direct inquiry for ${specialistLabel}]\n\n${formData.message}`
-        : formData.message
+      `[Phone/WhatsApp: ${formData.phone}]\n\n${formData.message}`
     );
     payload.append('hp_field', formData.hp_field);
 
@@ -121,7 +78,7 @@ function ContactForm() {
       if (res.success) {
         setSubmitted(true);
       } else {
-        setErrorMsg(res.error || 'Failed to submit inquiry. Please verify your entries.');
+        setErrorMsg(res.error || 'Failed to submit message.');
       }
     } catch (err: unknown) {
       setErrorMsg('An unexpected error occurred. Please try again.');
@@ -131,14 +88,7 @@ function ContactForm() {
   };
 
   return (
-    <div className="rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 p-5 sm:p-6 shadow-md relative">
-      {specialistLabel && (
-        <div className="mb-4 p-2.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold flex items-center gap-2">
-          <UserCheck className="w-4 h-4 text-blue-600 shrink-0" />
-          <span>Inquiry directed to {specialistLabel}</span>
-        </div>
-      )}
-
+    <div className="rounded-3xl bg-white border border-slate-200/80 p-8 shadow-xl shadow-slate-200/50 relative">
       {submitted ? (
         /* Success State */
         <motion.div
@@ -150,26 +100,18 @@ function ContactForm() {
             <CheckCircle2 className="w-7 h-7" />
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-[#0F172A] tracking-tight">
-            Inquiry Received Successfully
+            Message Sent Successfully
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-            Thank you for reaching out, <span className="text-[#0F172A] font-bold">{formData.name}</span>. Your requirements have been logged and our team will review your specifications within 24 hours.
+          <p className="text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
+            Thank you for reaching out, <span className="text-[#0F172A] font-bold">{formData.name}</span>. We will get back to you within 1 hour.
           </p>
           <div className="pt-3">
             <button
               onClick={() => {
                 setSubmitted(false);
-                setFormData({
-                  name: '',
-                  email: '',
-                  company: '',
-                  service: 'AI Automation & Autonomous Agents',
-                  budget: '$1,000–$2,500',
-                  message: '',
-                  hp_field: '',
-                });
+                setFormData({ name: '', phone: '', message: '', hp_field: '' });
               }}
-              className="px-5 py-2 rounded-full text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors"
+              className="px-6 py-2.5 rounded-xl text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors"
             >
               Send Another Message
             </button>
@@ -177,7 +119,12 @@ function ContactForm() {
         </motion.div>
       ) : (
         /* Contact Form */
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-[#0F172A] mb-2">Send Us a Message</h2>
+            <p className="text-sm text-slate-600">Fill out the form below and we will get back to you within 1 hour.</p>
+          </div>
+
           {/* Honeypot field (hidden from real users) */}
           <input
             type="text"
@@ -190,158 +137,72 @@ function ContactForm() {
           />
 
           {errorMsg && (
-            <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 flex items-start gap-2.5 text-rose-700 text-xs">
+            <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 flex items-start gap-2.5 text-rose-700 text-sm">
               <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
               <span>{errorMsg}</span>
             </div>
           )}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            {/* Name */}
-            <div className="space-y-1">
-              <label className="text-[11px] font-semibold text-slate-700 uppercase tracking-wider block">
-                Your Name <span className="text-rose-500">*</span>
-              </label>
-              <input
-                type="text"
-                required
-                placeholder="e.g. John Doe"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors"
-              />
-            </div>
-
-            {/* Email */}
-            <div className="space-y-1">
-              <label className="text-[11px] font-semibold text-slate-700 uppercase tracking-wider block">
-                Email Address <span className="text-rose-500">*</span>
-              </label>
-              <input
-                type="email"
-                required
-                placeholder="john@company.com"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            {/* Company (Optional) */}
-            <div className="space-y-1">
-              <label className="text-[11px] font-semibold text-slate-700 uppercase tracking-wider block">
-                Company or Organization
-              </label>
-              <input
-                type="text"
-                placeholder="Company Ltd. (optional)"
-                value={formData.company}
-                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                className="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors"
-              />
-            </div>
-
-            {/* Service Dropdown */}
-            <div className="space-y-1">
-              <label className="text-[11px] font-semibold text-slate-700 uppercase tracking-wider block">
-                Primary Solution Needed <span className="text-rose-500">*</span>
-              </label>
-              <select
-                value={formData.service}
-                onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                className="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm text-[#0F172A] focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors cursor-pointer"
-              >
-                <optgroup label="AI Automation & Chatbots (Muhammad Hassan)">
-                  <option value="AI Automation & Autonomous Agents">AI Automation & Autonomous Agents</option>
-                  <option value="WhatsApp Chatbots & Conversational AI">WhatsApp Chatbots & Conversational AI</option>
-                  <option value="Intelligent Customer Support Systems">Intelligent Customer Support Systems</option>
-                  <option value="Business Workflow Automation">Business Workflow Automation</option>
-                </optgroup>
-
-                <optgroup label="Email Marketing (Muhammad Saqlain)">
-                  <option value="Email Marketing & Outreach Campaigns">Email Marketing & Outreach Campaigns</option>
-                  <option value="Automated Email Drip Sequences">Automated Email Drip Sequences</option>
-                  <option value="B2B Cold Outreach & Lead Nurturing">B2B Cold Outreach & Lead Nurturing</option>
-                  <option value="Deliverability & Inbox Infrastructure">Deliverability & Inbox Infrastructure</option>
-                </optgroup>
-
-                <optgroup label="Full-Stack Engineering (Muhammad Hamdan)">
-                  <option value="Full-Stack Web Development (Next.js)">Full-Stack Web Development (Next.js)</option>
-                  <option value="Custom SaaS Platform Engineering">Custom SaaS Platform Engineering</option>
-                  <option value="Supabase & PostgreSQL Architecture">Supabase & PostgreSQL Architecture</option>
-                  <option value="REST & Webhook API Integration">REST & Webhook API Integration</option>
-                </optgroup>
-
-                <optgroup label="Integrated Agency Package">
-                  <option value="Complete Agency Package (All 3 Disciplines)">Complete Agency Package (All 3 Disciplines)</option>
-                  <option value="Other / Custom Technical Scope">Other / Custom Technical Scope</option>
-                </optgroup>
-              </select>
-            </div>
-          </div>
-
-          {/* Budget Dropdown */}
+          {/* Name */}
           <div className="space-y-1.5">
-            <label className="text-[11px] font-semibold text-slate-700 uppercase tracking-wider block">
-              Estimated Project Budget <span className="text-rose-500">*</span>
+            <label className="text-xs font-semibold text-slate-700 block">
+              Your Name <span className="text-rose-500">*</span>
             </label>
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5 sm:gap-2">
-              {budgetRanges.map((b) => (
-                <button
-                  type="button"
-                  key={b}
-                  onClick={() => setFormData({ ...formData, budget: b })}
-                  className={`py-1.5 sm:py-2 px-2 rounded-lg text-xs font-medium border text-center transition-all ${
-                    formData.budget === b
-                      ? 'bg-blue-600 text-white border-blue-600 shadow-sm shadow-blue-600/20'
-                      : 'bg-slate-50/80 border-slate-200 text-slate-700 hover:bg-slate-100'
-                  }`}
-                >
-                  {b}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Project Details */}
-          <div className="space-y-1">
-            <label className="text-[11px] font-semibold text-slate-700 uppercase tracking-wider block">
-              Project Scope & Goals <span className="text-rose-500">*</span>
-            </label>
-            <textarea
+            <input
+              type="text"
               required
-              rows={3}
-              placeholder="Describe your workflows, goals, timeline, and any key tools to connect..."
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors"
+              placeholder="Full Name"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-[#1E293B] focus:ring-1 focus:ring-[#1E293B] transition-colors"
             />
           </div>
 
-          {/* Submit CTA */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="typography-btn w-full py-3 rounded-xl text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 shadow-md shadow-blue-600/20 transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5 text-xs sm:text-sm"
-          >
-            {loading ? (
-              <>
-                <Loader2 className="w-4 h-4 animate-spin" />
-                <span>Submitting Securely...</span>
-              </>
-            ) : (
-              <>
-                <Send className="w-4 h-4" />
-                <span>Submit Project Inquiry</span>
-              </>
-            )}
-          </button>
+          {/* Phone / WhatsApp */}
+          <div className="space-y-1.5">
+            <label className="text-xs font-semibold text-slate-700 block">
+              Phone / WhatsApp <span className="text-rose-500">*</span>
+            </label>
+            <input
+              type="text"
+              required
+              placeholder="0300 1234567"
+              value={formData.phone}
+              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-[#1E293B] focus:ring-1 focus:ring-[#1E293B] transition-colors"
+            />
+          </div>
 
-          <div className="flex items-center justify-center gap-2 text-[10px] sm:text-[11px] text-slate-500 pt-0.5 font-medium">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Protected by server-side validation and Supabase RLS. No spam.</span>
+          {/* Message / Requirements */}
+          <div className="space-y-1.5">
+            <label className="text-xs font-semibold text-slate-700 block">
+              Message / Requirements <span className="text-rose-500">*</span>
+            </label>
+            <textarea
+              required
+              rows={4}
+              placeholder="Tell us about your home/business system requirements..."
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-[#1E293B] focus:ring-1 focus:ring-[#1E293B] transition-colors resize-none"
+            />
+          </div>
+
+          <div className="pt-2">
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-[#1E293B] hover:bg-[#0F172A] text-white font-bold py-3.5 rounded-xl shadow-lg shadow-slate-900/20 transition-all duration-200 flex items-center justify-center gap-2"
+            >
+              {loading ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <>
+                  <span>SEND MESSAGE</span>
+                  <Send className="w-4 h-4" />
+                </>
+              )}
+            </button>
           </div>
         </form>
       )}
@@ -359,84 +220,84 @@ export default function ContactPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          {/* Left Column: Context & Guarantees */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200">
-                <span className="typography-label text-blue-700">Start Your Project</span>
-              </div>
-              <h1 className="typography-h2">
-                LET&apos;S ENGINEER <br />
-                <span className="nexa-gradient-text">
-                  YOUR SYSTEM
-                </span>
-              </h1>
-              <p className="typography-body-lg text-slate-600">
-                Have a workflow to automate, an email sequence to scale, or a modern full-stack web application to build? Share your requirements with NexaCore Automations.
-              </p>
-            </div>
+          {/* Left Column: Dark Blue Contact Info Card */}
+          <div className="lg:col-span-5 h-full">
+            <div className="bg-[#1E293B] rounded-3xl p-8 sm:p-10 text-white h-full flex flex-col justify-between shadow-2xl relative overflow-hidden">
+              {/* Background gradient/glow inside the card */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[60px] pointer-events-none" />
 
-            {/* Direct Information Badges */}
-            <div className="space-y-3 pt-3 border-t border-slate-200">
-              <div className="p-4 sm:p-4.5 rounded-2xl bg-[#F8FAFC] border border-slate-200/90 flex items-center gap-3.5 shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
-                  <Clock className="w-4.5 h-4.5" />
-                </div>
-                <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-[#0F172A]">Rapid Response</h4>
-                  <p className="text-xs text-slate-500 font-medium">Inquiries reviewed and scoped within 24 hours.</p>
-                </div>
-              </div>
-
-              <div className="p-4 sm:p-4.5 rounded-2xl bg-[#F8FAFC] border border-slate-200/90 flex items-center gap-3.5 shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 shrink-0 shadow-sm">
-                  <ShieldCheck className="w-4.5 h-4.5" />
-                </div>
-                <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-[#0F172A]">Direct Specialist Access</h4>
-                  <p className="text-xs text-slate-500 font-medium">Work directly with Muhammad Hassan, Muhammad Saqlain, or Muhammad Hamdan.</p>
-                </div>
-              </div>
-
-              {/* 3 Specialists Direct Contact Availability Strip */}
-              <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-2.5">
-                <span className="typography-label text-slate-500 block">
-                  Dedicated Agency Specialists:
-                </span>
+              <div className="relative z-10 space-y-10">
                 <div className="space-y-2">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full overflow-hidden border border-blue-200 shrink-0 shadow-xs">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/team/hassan.jpg" alt="Muhammad Hassan" className="w-full h-full object-cover object-[50%_15%]" />
+                  <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                    NexaCore HQ
+                  </h1>
+                  <p className="text-slate-400 text-sm">
+                    Serving clients globally
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  {/* Address */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-cyan-400 shrink-0">
+                      <MapPin className="w-5 h-5" />
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="text-xs font-bold text-[#0F172A]">Muhammad Hassan</div>
-                      <div className="text-[11px] text-blue-600 font-medium truncate">AI Automation & Chatbots</div>
+                    <div className="mt-1">
+                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Office Address</p>
+                      <p className="text-sm font-semibold text-white">Multan / South Punjab, Pakistan</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full overflow-hidden border border-purple-200 shrink-0 shadow-xs">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/team/saqlain.jpg" alt="Muhammad Saqlain" className="w-full h-full object-cover object-[50%_15%]" />
+                  {/* Phone */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-cyan-400 shrink-0">
+                      <Phone className="w-5 h-5" />
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="text-xs font-bold text-[#0F172A]">Muhammad Saqlain</div>
-                      <div className="text-[11px] text-purple-600 font-medium truncate">Email Marketing Manager</div>
+                    <div className="mt-1">
+                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Phone / WhatsApp</p>
+                      <a href="https://wa.me/923000000000" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white hover:text-cyan-400 transition-colors">
+                        +92 300 0000000
+                      </a>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full overflow-hidden border border-cyan-200 shrink-0 shadow-xs">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/team/hamdan.jpg" alt="Muhammad Hamdan" className="w-full h-full object-cover object-[50%_15%]" />
+                  {/* Email */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-cyan-400 shrink-0">
+                      <Mail className="w-5 h-5" />
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="text-xs font-bold text-[#0F172A]">Muhammad Hamdan</div>
-                      <div className="text-[11px] text-cyan-700 font-medium truncate">Full-Stack Developer</div>
+                    <div className="mt-1">
+                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Email Inquiry</p>
+                      <a href="mailto:contact@nexacoreautomations.com" className="text-sm font-semibold text-white hover:text-cyan-400 transition-colors">
+                        contact@nexacoreautomations.com
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Hours */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-cyan-400 shrink-0">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div className="mt-1">
+                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Working Hours</p>
+                      <p className="text-sm font-semibold text-white">Mon - Sat: 9:00 AM - 7:00 PM</p>
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Bottom WhatsApp Button */}
+              <div className="relative z-10 pt-10 mt-auto">
+                <a
+                  href="https://wa.me/923000000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-[#10B981] hover:bg-[#059669] text-white font-bold py-4 rounded-xl shadow-lg shadow-[#10B981]/20 transition-all duration-200 flex items-center justify-center gap-2 hover:-translate-y-0.5"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>DIRECT WHATSAPP CHAT</span>
+                </a>
               </div>
             </div>
           </div>
