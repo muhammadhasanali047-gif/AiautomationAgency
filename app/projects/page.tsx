@@ -94,18 +94,7 @@ export default async function ProjectsPage() {
             </span>
           </h1>
 
-          {/* 3 Discipline Badges */}
-          <div className="flex flex-wrap items-center gap-2 pt-0.5">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">
-              AI Automation & Chatbots
-            </span>
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-200">
-              Email Marketing
-            </span>
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-50 text-cyan-800 border border-cyan-200">
-              Full-Stack Development
-            </span>
-          </div>
+
 
           <p className="typography-body-lg text-slate-600">
             Real architectural breakdowns of production AI automation systems, high-converting email marketing infrastructures, and scalable full-stack web platforms engineered by our 3 specialists.
