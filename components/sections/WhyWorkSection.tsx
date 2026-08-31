@@ -38,14 +38,14 @@ export default function WhyWorkSection() {
   return (
     <section className="relative py-16 sm:py-20 bg-[#F8FAFC] border-t border-slate-200/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-2">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200">
-            <span className="typography-label text-blue-700">Why NexaCore</span>
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-blue-700">Why NexaCore</span>
           </div>
-          <h2 className="typography-h2">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#0F172A]">
             WHY WORK WITH US
           </h2>
-          <p className="typography-body text-slate-600">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
             Straightforward engineering principles that prioritize business outcomes, speed, and technical longevity.
           </p>
         </div>
@@ -56,16 +56,16 @@ export default function WhyWorkSection() {
             return (
               <div
                 key={pillar.title}
-                className="rounded-3xl p-6 bg-white border border-slate-200/90 hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group"
+                className="rounded-[20px] p-5 sm:p-6 bg-white border border-slate-200/90 hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group"
               >
                 <div>
-                  <div className={`w-11 h-11 rounded-2xl border flex items-center justify-center ${pillar.color} mb-4 group-hover:scale-110 transition-transform shadow-sm`}>
-                    <Icon className="w-5 h-5" />
+                  <div className={`w-9 h-9 rounded-xl border flex items-center justify-center ${pillar.color} mb-3.5 group-hover:scale-110 transition-transform shadow-sm`}>
+                    <Icon className="w-4 h-4" />
                   </div>
-                  <h3 className="typography-h4 text-base sm:text-lg mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="font-bold text-sm sm:text-base mb-1.5 text-[#0F172A] group-hover:text-blue-600 transition-colors leading-snug">
                     {pillar.title}
                   </h3>
-                  <p className="typography-body-sm text-slate-600">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {pillar.description}
                   </p>
                 </div>
