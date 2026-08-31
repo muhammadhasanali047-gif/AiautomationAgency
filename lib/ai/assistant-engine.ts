@@ -200,18 +200,18 @@ export function generateGroundedResponse(
     if (lang === 'urdu') {
       return {
         reply:
-          'میں صرف نکساکور آٹومیشنز، ہماری سروسز، پروجیکٹس، ٹیم اور ویب سائٹ کے بارے میں معلومات فراہم کرتا ہوں۔ آپ نکساکور کے بارے میں کیا جاننا چاہتے ہیں؟',
+          'معاف کیجیے گا، میں صرف نکساکور آٹومیشنز، ہماری سروسز، پروجیکٹس، ٹیم اور ویب سائٹ کے بارے میں معلومات فراہم کر سکتا ہوں۔ میں اس حوالے سے آپ کی کیا مدد کروں؟',
       };
     }
     if (lang === 'roman_urdu' || lang === 'mixed') {
       return {
         reply:
-          'Main sirf NexaCore Automations, hamari services, solutions, projects aur team ke bare mein help karta hoon. Aap NexaCore ke bare mein kya janna chahte hain?',
+          'Maaf kijiyega, main sirf NexaCore Automations, hamari services, solutions, projects aur team ke bare mein hi help kar sakta hoon. Aap is hawale se kya janna chahte hain?',
       };
     }
     return {
       reply:
-        "I'm here to help with NexaCore Automations, our services, solutions, projects, team, and website. What would you like to know about NexaCore?",
+        "I am sorry, but I can only assist with information related to NexaCore Automations, our services, projects, team, and website. How can I help you with our agency today?",
     };
   }
 
