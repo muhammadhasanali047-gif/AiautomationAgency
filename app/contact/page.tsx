@@ -219,6 +219,22 @@ export default function ContactPage() {
       <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Centered Page Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200">
+            <span className="typography-label text-blue-700">Contact Us</span>
+          </div>
+          <h1 className="typography-h2">
+            LET&apos;S ENGINEER <br />
+            <span className="nexa-gradient-text">
+              YOUR SYSTEM
+            </span>
+          </h1>
+          <p className="typography-body-lg text-slate-600">
+            Reach out to discuss your AI automation, email marketing, or custom full-stack development requirements.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Left Column: Contact Info Card (Light Theme) */}
           <div className="lg:col-span-5 h-full">
