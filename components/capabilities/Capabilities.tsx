@@ -80,9 +80,6 @@ export default function Capabilities() {
               SERVICES & SOLUTIONS
             </h2>
           </div>
-          <p className="typography-body text-slate-600 max-w-md">
-            Four specialized engineering disciplines combined into one seamless agency offering — built specifically by our 3-person team.
-          </p>
         </div>
 
         {/* 4 Focused Capability Cards */}
