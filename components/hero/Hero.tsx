@@ -33,109 +33,121 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] bg-gradient-to-r from-blue-500/10 via-purple-500/5 to-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-      {/* Floating Side Animations */}
-      <FloatingBadge icon={Workflow} label="Automated Workflows" delay={0.2} positionClass="left-[4%] xl:left-[10%] top-[25%] -rotate-2" />
-      <FloatingBadge icon={Code2} label="Custom SaaS" delay={0.6} positionClass="left-[6%] xl:left-[12%] bottom-[30%] rotate-3" />
-      
-      <FloatingBadge icon={Bot} label="AI Agents" delay={0.4} positionClass="right-[4%] xl:right-[10%] top-[30%] rotate-2" />
-      <FloatingBadge icon={Mail} label="Email Infrastructure" delay={0.8} positionClass="right-[6%] xl:right-[12%] bottom-[25%] -rotate-3" />
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center space-y-6">
-        {/* Tagline Pill (Dots removed) */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-slate-200/90 shadow-sm"
-        >
-          <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-          <span className="typography-label text-[#0F172A]">
-            AUTOMATE <span className="text-slate-300 font-normal">/</span> INNOVATE <span className="text-slate-300 font-normal">/</span> ELEVATE
-          </span>
-        </motion.div>
-
-        {/* Main Hero Headline (Dots removed) */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.1 }}
-          className="space-y-4"
-        >
-          <h1 className="typography-hero">
-            Automate Smarter <br />
-            Build Better <br />
-            <span className="nexa-gradient-text">
-              Scale Faster
-            </span>
-          </h1>
-
-          {/* 3 Specialist Skill Badges (Dots removed) */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
-            <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200 shadow-xs">
-              AI Automation & Chatbots
-            </span>
-            <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-200 shadow-xs">
-              Email Marketing
-            </span>
-            <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-50 text-cyan-800 border border-cyan-200 shadow-xs">
-              Full-Stack Development
-            </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        
+        {/* LEFT COLUMN: Visuals / Animation */}
+        <div className="relative hidden lg:flex h-[500px] w-full items-center justify-center">
+          {/* A glowing central core to tie the badges together visually */}
+          <div className="absolute w-32 h-32 bg-blue-600/10 rounded-full blur-xl animate-pulse" />
+          <div className="absolute w-16 h-16 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30 z-10">
+            <span className="text-white font-black text-xl tracking-tighter">Nexa</span>
           </div>
-        </motion.div>
 
-        {/* Description (Explaining the 3 distinct specializations concisely where NexaCore is introduced) */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.2 }}
-          className="typography-body-lg max-w-2xl mx-auto text-slate-600"
-        >
-          <span className="text-[#0F172A] font-semibold">NexaCore Automations</span> delivers three specialized capabilities in one unified team: <span className="text-[#0F172A] font-medium">AI Automation & Chatbots</span> to streamline business workflows, <span className="text-[#0F172A] font-medium">Email Marketing</span> to drive client outreach, and <span className="text-[#0F172A] font-medium">Full-Stack Development</span> to engineer scalable web platforms.
-        </motion.p>
+          {/* Floating Badges arranged in an orbit-like cluster */}
+          <FloatingBadge icon={Workflow} label="Automated Workflows" delay={0.2} positionClass="top-[10%] left-[5%] -rotate-3" />
+          <FloatingBadge icon={Bot} label="AI Agents" delay={0.4} positionClass="top-[15%] right-[0%] rotate-2" />
+          <FloatingBadge icon={Code2} label="Custom SaaS" delay={0.6} positionClass="bottom-[15%] left-[2%] rotate-3" />
+          <FloatingBadge icon={Mail} label="Email Infrastructure" delay={0.8} positionClass="bottom-[10%] right-[5%] -rotate-2" />
+        </div>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-4 pt-1"
-        >
-          <Link
-            href="/contact"
-            className="typography-btn group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 shadow-lg shadow-blue-600/25 transition-all duration-200 hover:shadow-blue-600/40 hover:-translate-y-0.5"
+        {/* RIGHT COLUMN: Text */}
+        <div className="space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
+          {/* Tagline Pill */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-slate-200/90 shadow-sm"
           >
-            <span>Start Your Project</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+            <span className="typography-label text-[#0F172A]">
+              AUTOMATE <span className="text-slate-300 font-normal">/</span> INNOVATE <span className="text-slate-300 font-normal">/</span> ELEVATE
+            </span>
+          </motion.div>
 
-          <Link
-            href="/about"
-            className="typography-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-[#0F172A] bg-white hover:bg-slate-50 border-2 border-[#0F172A] shadow-sm transition-all duration-200 hover:-translate-y-0.5"
+          {/* Main Hero Headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.1 }}
+            className="space-y-5"
           >
-            <span>View Our Work</span>
-          </Link>
-        </motion.div>
+            <h1 className="text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] text-[#0F172A]">
+              Automate Smarter <br />
+              Build Better <br />
+              <span className="nexa-gradient-text">
+                Scale Faster
+              </span>
+            </h1>
 
-        {/* Value Indicators */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap items-center justify-center gap-6 pt-4 border-t border-slate-200 max-w-lg mx-auto text-xs sm:text-sm text-slate-600 font-medium"
-        >
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
-            <span>Production Ready</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-purple-600 shrink-0" />
-            <span>Zero Hallucination</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" />
-            <span>Secure Cloud RLS</span>
-          </div>
-        </motion.div>
+            {/* 3 Specialist Skill Badges */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
+              <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200 shadow-xs">
+                AI Automation & Chatbots
+              </span>
+              <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-200 shadow-xs">
+                Email Marketing
+              </span>
+              <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-50 text-cyan-800 border border-cyan-200 shadow-xs">
+                Full-Stack Development
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.2 }}
+            className="text-base sm:text-lg lg:text-lg xl:text-xl text-slate-600 leading-relaxed max-w-2xl"
+          >
+            <span className="text-[#0F172A] font-semibold">NexaCore Automations</span> delivers three specialized capabilities in one unified team: <span className="text-[#0F172A] font-medium">AI Automation & Chatbots</span> to streamline business workflows, <span className="text-[#0F172A] font-medium">Email Marketing</span> to drive client outreach, and <span className="text-[#0F172A] font-medium">Full-Stack Development</span> to engineer scalable web platforms.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.3 }}
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2"
+          >
+            <Link
+              href="/contact"
+              className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 shadow-lg shadow-blue-600/25 transition-all duration-200 hover:shadow-blue-600/40 hover:-translate-y-0.5 font-bold tracking-wide"
+            >
+              <span>Start Your Project</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+
+            <Link
+              href="/about"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-[#0F172A] bg-white hover:bg-slate-50 border-2 border-[#0F172A] shadow-sm transition-all duration-200 hover:-translate-y-0.5 font-bold tracking-wide"
+            >
+              <span>View Our Work</span>
+            </Link>
+          </motion.div>
+
+          {/* Value Indicators */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-5 pt-6 border-t border-slate-200/60 w-full text-xs sm:text-sm text-slate-600 font-medium"
+          >
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
+              <span>Production Ready</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-purple-600 shrink-0" />
+              <span>Zero Hallucination</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" />
+              <span>Secure Cloud RLS</span>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
