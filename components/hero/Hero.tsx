@@ -96,7 +96,7 @@ export default function Hero() {
         </div>
 
         {/* RIGHT COLUMN: AI Workflow Mockup */}
-        <div className="relative hidden lg:block w-full max-w-lg mx-auto">
+        <div className="relative hidden lg:block w-full max-w-lg mx-auto lg:-mt-12 xl:-mt-16">
           {/* Floating Badges */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
