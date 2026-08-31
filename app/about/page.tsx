@@ -27,19 +27,19 @@ export default function AboutPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="max-w-3xl space-y-3.5 mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200">
-            <span className="typography-label text-blue-700">About NexaCore Automations</span>
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-blue-700">About NexaCore Automations</span>
           </div>
-          <h1 className="typography-h2">
-            AI Automation, Email Marketing & <br />
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0F172A]">
+            AI Automation, Email Marketing & <br className="hidden sm:block" />
             <span className="nexa-gradient-text">
               Full-Stack Software Agency
             </span>
           </h1>
 
           {/* 3 Discipline Badges */}
-          <div className="flex flex-wrap items-center gap-2 pt-0.5">
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
             <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">
               AI Automation & Chatbots
             </span>
@@ -51,7 +51,7 @@ export default function AboutPage() {
             </span>
           </div>
 
-          <p className="typography-body-lg text-slate-600">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
             At NexaCore, we unite three core capabilities in one specialized agency: <span className="text-[#0F172A] font-semibold">AI Automation & Chatbots</span> to streamline business workflows, <span className="text-[#0F172A] font-semibold">Email Marketing</span> to scale customer outreach, and <span className="text-[#0F172A] font-semibold">Full-Stack Development</span> to engineer scalable web platforms.
           </p>
         </div>
