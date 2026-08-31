@@ -112,8 +112,8 @@ export default async function ProjectsPage() {
           </p>
         </div>
 
-        {/* Project Cards List (Line by Line) */}
-        <div className="flex flex-col gap-8 max-w-3xl mx-auto">
+        {/* Project Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project) => {
             const specialist = getSpecialistForProject(project.category);
             const SpecialistIcon = specialist.icon;
@@ -124,7 +124,7 @@ export default async function ProjectsPage() {
                 className="group rounded-3xl bg-[#F8FAFC] border border-slate-200/90 hover:border-blue-300 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1"
               >
                 {/* Media Header with Specialist Attribution */}
-                <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full bg-gradient-to-br from-slate-100 to-slate-50 border-b border-slate-200/80 overflow-hidden flex items-center justify-center p-6">
+                <div className="relative aspect-square sm:aspect-[4/3] w-full bg-gradient-to-br from-slate-100 to-slate-50 border-b border-slate-200/80 overflow-hidden flex items-center justify-center p-6">
                   <div className="text-center space-y-3 flex flex-col items-center justify-center max-w-sm">
                     <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shadow-sm group-hover:scale-110 transition-transform">
                       <SpecialistIcon className="w-6 h-6" />
