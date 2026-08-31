@@ -42,11 +42,11 @@ export default function Navbar() {
           : 'bg-white/80 backdrop-blur-md py-3.5 sm:py-4 border-b border-slate-100/60'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* NexaCore Logo */}
-          <Link href="/" className="group flex items-center focus:outline-none">
-            <Logo variant="horizontal" size="md" />
+          {/* NexaCore Logo (Strict h-8/h-9 horizontal lockup) */}
+          <Link href="/" className="group flex items-center h-8 sm:h-9 focus:outline-none">
+            <Logo variant="horizontal" size="sm" className="h-full" />
           </Link>
 
           {/* Desktop Navigation Links */}
