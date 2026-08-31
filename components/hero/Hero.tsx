@@ -108,15 +108,7 @@ export default function Hero() {
             <span className="text-sm font-bold text-slate-800">99.9% Uptime</span>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="absolute -bottom-6 -left-6 z-20 bg-white border border-slate-200 px-4 py-2.5 rounded-xl shadow-lg shadow-slate-200/50 flex items-center gap-2"
-          >
-            <span className="text-xl">🚀</span>
-            <span className="text-sm font-bold text-slate-800">5x Lead Conversion</span>
-          </motion.div>
+
 
           {/* Main Glassmorphism Card */}
           <motion.div
