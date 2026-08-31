@@ -82,7 +82,6 @@ function LinkedInIcon({ className = 'w-4 h-4' }: { className?: string }) {
 }
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer
@@ -196,7 +195,7 @@ export default function Footer() {
 
         {/* Bottom Bar: Copyright & Legal */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 font-normal">
-          <p>© {currentYear} NexaCore Automations. All rights reserved.</p>
+          <div />
 
           <div className="flex items-center gap-4 text-xs">
             {FOOTER_CONFIG.legal.map((item, idx) => (
