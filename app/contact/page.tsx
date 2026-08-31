@@ -9,12 +9,12 @@ import {
   AlertCircle,
   Loader2,
   ShieldCheck,
-  Clock,
   UserCheck,
-  MapPin,
   Phone,
   Mail,
   MessageCircle,
+  Instagram,
+  Linkedin,
 } from 'lucide-react';
 import { submitContactInquiry } from '@/app/actions/contact';
 
@@ -250,17 +250,6 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-6">
-                  {/* Address */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                    <div className="mt-1">
-                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Office Address</p>
-                      <p className="text-sm font-bold text-[#0F172A]">Multan / South Punjab, Pakistan</p>
-                    </div>
-                  </div>
-
                   {/* Phone */}
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
@@ -287,14 +276,29 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Hours */}
+                  {/* LinkedIn */}
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
-                      <Clock className="w-5 h-5" />
+                      <Linkedin className="w-5 h-5" />
                     </div>
                     <div className="mt-1">
-                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Working Hours</p>
-                      <p className="text-sm font-bold text-[#0F172A]">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">LinkedIn</p>
+                      <a href="https://linkedin.com/company/nexacore" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-[#0F172A] hover:text-blue-600 transition-colors">
+                        NexaCore Automations
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Instagram */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
+                      <Instagram className="w-5 h-5" />
+                    </div>
+                    <div className="mt-1">
+                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Instagram</p>
+                      <a href="https://instagram.com/nexacore" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-[#0F172A] hover:text-blue-600 transition-colors">
+                        @nexacoreautomations
+                      </a>
                     </div>
                   </div>
                 </div>
