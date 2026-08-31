@@ -51,7 +51,7 @@ export default function TeamMemberCard({ member, onSelect }: TeamMemberCardProps
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       onClick={() => onSelect(member)}
-      className="group relative rounded-3xl bg-white border border-slate-200/90 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer p-5 sm:p-6 hover:-translate-y-1"
+      className="group relative rounded-3xl bg-white border border-slate-200/90 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer p-4 sm:p-5 hover:-translate-y-1"
     >
       {/* Top Ambient Glow on Card Hover */}
       <div
@@ -61,7 +61,7 @@ export default function TeamMemberCard({ member, onSelect }: TeamMemberCardProps
 
       <div className="space-y-4">
         {/* Photo Framing Container */}
-        <div className="relative aspect-[4/4.2] w-full rounded-2xl bg-gradient-to-b from-slate-100 to-slate-200/70 border border-slate-200/80 overflow-hidden flex items-center justify-center shadow-inner">
+        <div className="relative aspect-[4/3] w-full rounded-2xl bg-gradient-to-b from-slate-100 to-slate-200/70 border border-slate-200/80 overflow-hidden flex items-center justify-center shadow-inner">
           {!imageError ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img

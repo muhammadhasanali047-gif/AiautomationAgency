@@ -14,7 +14,7 @@ export default function TeamSection() {
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2" />
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200">
