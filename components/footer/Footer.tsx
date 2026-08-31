@@ -26,6 +26,7 @@ export const FOOTER_CONFIG = {
     { name: 'WhatsApp Automation', href: '/services#whatsapp-chatbots' },
     { name: 'Email Marketing', href: '/services#email-marketing' },
     { name: 'Full-Stack Development', href: '/services#full-stack-web-apps' },
+    { name: 'Privacy Policy', href: '/privacy' },
   ],
   connect: [
     {
