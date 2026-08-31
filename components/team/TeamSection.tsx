@@ -5,8 +5,6 @@ import { TEAM_MEMBERS } from '@/lib/data/team';
 import { TeamMember } from '@/types/team';
 import TeamMemberCard from './TeamMemberCard';
 import TeamModal from './TeamModal';
-import TeamSynergy from './TeamSynergy';
-
 export default function TeamSection() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
@@ -43,8 +41,6 @@ export default function TeamSection() {
           ))}
         </div>
 
-        {/* Agency Synergy Section: AI + Marketing + Engineering */}
-        <TeamSynergy />
       </div>
 
       {/* Interactive Member Modal */}
