@@ -39,7 +39,7 @@ export default function Hero() {
             transition={{ duration: 0.55, delay: 0.1 }}
             className="space-y-5"
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-5xl xl:text-7xl font-black tracking-tight leading-[1.05] text-[#0F172A]">
+            <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-[1.1] text-[#0F172A]">
               Automate Smarter <br />
               Build Better <br />
               <span className="nexa-gradient-text">
