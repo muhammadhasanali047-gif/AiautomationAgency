@@ -126,27 +126,6 @@ export default function Hero() {
               <span>View Our Work</span>
             </Link>
           </motion.div>
-
-          {/* Value Indicators */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap items-center justify-center lg:justify-start gap-5 pt-6 border-t border-slate-200/60 w-full text-xs sm:text-sm text-slate-600 font-medium"
-          >
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
-              <span>Production Ready</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-purple-600 shrink-0" />
-              <span>Zero Hallucination</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" />
-              <span>Secure Cloud RLS</span>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
