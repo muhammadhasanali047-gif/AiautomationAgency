@@ -37,8 +37,8 @@ export default async function HomePage() {
       <TechStrip />
       <Capabilities />
       <WhyWorkSection />
-      <TeamSection />
       <ProcessSection />
+      <TeamSection />
       <TestimonialsSection testimonials={testimonials} />
     </div>
   );
