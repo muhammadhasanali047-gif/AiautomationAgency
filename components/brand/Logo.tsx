@@ -73,7 +73,7 @@ export default function Logo({
 
   // Horizontal Logo (Ideal for Navbar & Headers)
   return (
-    <div className={`flex items-center gap-2.5 ${className}`}>
+    <div className={`flex items-center gap-0.5 ${className}`}>
       <BrandMark size={currentMarkSize} monochrome={monochrome} />
 
       <div className="flex flex-col pt-1">
