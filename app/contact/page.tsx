@@ -220,17 +220,17 @@ export default function ContactPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Centered Page Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200">
-            <span className="typography-label text-blue-700">Contact Us</span>
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-blue-700">Contact Us</span>
           </div>
-          <h1 className="typography-h2">
-            LET&apos;S ENGINEER <br />
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0F172A]">
+            LET&apos;S ENGINEER <br className="hidden sm:block" />
             <span className="nexa-gradient-text">
               YOUR SYSTEM
             </span>
           </h1>
-          <p className="typography-body-lg text-slate-600">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-lg mx-auto">
             Reach out to discuss your AI automation, email marketing, or custom full-stack development requirements.
           </p>
         </div>
