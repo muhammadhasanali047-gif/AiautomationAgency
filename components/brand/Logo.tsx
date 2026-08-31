@@ -18,17 +18,17 @@ export default function Logo({
 }: LogoProps) {
   // Dimensions based on size
   const markSizes = {
-    sm: 32,
-    md: 40,
-    lg: 52,
-    xl: 72,
+    sm: 38,
+    md: 48,
+    lg: 64,
+    xl: 84,
   };
 
   const textSizes = {
-    sm: { N: 'text-2xl', rest: 'text-sm', auto: 'text-[7px] tracking-[0.1em]', tag: 'text-[7px] tracking-[0.3em]' },
-    md: { N: 'text-3xl sm:text-4xl', rest: 'text-lg sm:text-xl', auto: 'text-[8px] sm:text-[9px] tracking-[0.15em]', tag: 'text-[8px] tracking-[0.3em]' },
-    lg: { N: 'text-5xl', rest: 'text-3xl', auto: 'text-[11px] tracking-[0.2em]', tag: 'text-[9px] tracking-[0.35em]' },
-    xl: { N: 'text-6xl sm:text-7xl', rest: 'text-4xl sm:text-5xl', auto: 'text-xs tracking-[0.25em]', tag: 'text-xs tracking-[0.4em]' },
+    sm: { rest: 'text-lg', auto: 'text-[7.5px] tracking-[0.15em]', tag: 'text-[7px] tracking-[0.3em]' },
+    md: { rest: 'text-2xl', auto: 'text-[9.5px] tracking-[0.18em]', tag: 'text-[8px] tracking-[0.3em]' },
+    lg: { rest: 'text-4xl', auto: 'text-[13px] tracking-[0.2em]', tag: 'text-[9px] tracking-[0.35em]' },
+    xl: { rest: 'text-5xl sm:text-6xl', auto: 'text-[15px] tracking-[0.25em]', tag: 'text-xs tracking-[0.4em]' },
   };
 
   const currentMarkSize = markSizes[size];
@@ -41,10 +41,9 @@ export default function Logo({
   if (variant === 'stacked') {
     return (
       <div className={`flex flex-col items-center text-center ${className}`}>
-        <BrandMark size={currentMarkSize * 1.4} monochrome={monochrome} className="mb-3" />
+        <BrandMark size={currentMarkSize * 1.3} monochrome={monochrome} className="mb-3" />
         <div className="flex flex-col items-end">
           <div className="flex items-baseline">
-            <span className={`font-black tracking-tight leading-none ${monochrome ? 'text-current' : 'text-[#0F172A]'} ${currentTextSize.N}`}>N</span>
             <span className={`font-black tracking-tight leading-none ${monochrome ? 'text-current' : 'text-[#0F172A]'} ${currentTextSize.rest}`}>exa</span>
             <span
               className={`font-black tracking-tight leading-none ${currentTextSize.rest} ${
@@ -57,7 +56,7 @@ export default function Logo({
             </span>
           </div>
           <div className="flex justify-end mt-0.5">
-            <span className={`uppercase font-bold ${monochrome ? 'text-current opacity-70' : 'text-slate-500'} ${currentTextSize.auto}`}>
+            <span className={`uppercase font-extrabold ${monochrome ? 'text-current opacity-90' : 'text-slate-700'} ${currentTextSize.auto}`}>
               AUTOMATION
             </span>
           </div>
@@ -74,14 +73,13 @@ export default function Logo({
 
   // Horizontal Logo (Ideal for Navbar & Headers)
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
+    <div className={`flex items-center gap-2.5 ${className}`}>
       <BrandMark size={currentMarkSize} monochrome={monochrome} />
 
       <div className="flex flex-col pt-1">
-        {/* Main Wordmark: N (Large) + exa (Navy) + core (Tech Gradient) */}
+        {/* Main Wordmark: exa (Navy) + core (Tech Gradient) */}
         <div className="flex items-baseline">
-          <span className={`font-black tracking-tighter leading-none ${monochrome ? 'text-current' : 'text-[#0F172A]'} ${currentTextSize.N}`}>N</span>
-          <span className={`font-black tracking-tight leading-none ml-[1px] ${monochrome ? 'text-current' : 'text-[#0F172A]'} ${currentTextSize.rest}`}>exa</span>
+          <span className={`font-black tracking-tight leading-none ${monochrome ? 'text-current' : 'text-[#0F172A]'} ${currentTextSize.rest}`}>exa</span>
           <span
             className={`font-black tracking-tight leading-none ${currentTextSize.rest} ${
               monochrome
@@ -93,9 +91,9 @@ export default function Logo({
           </span>
         </div>
 
-        {/* Subtitle: AUTOMATION aligned to the right (under core) */}
-        <div className="flex justify-end mt-[1px]">
-          <span className={`font-bold uppercase ${monochrome ? 'text-current opacity-70' : 'text-slate-500'} ${currentTextSize.auto}`}>
+        {/* Subtitle: AUTOMATION aligned strictly under core */}
+        <div className="flex justify-end mt-[2px]">
+          <span className={`font-extrabold uppercase ${monochrome ? 'text-current opacity-90' : 'text-slate-700'} ${currentTextSize.auto}`}>
             AUTOMATION
           </span>
         </div>
