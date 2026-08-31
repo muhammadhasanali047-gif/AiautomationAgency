@@ -82,7 +82,7 @@ export default async function ProjectsPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="max-w-3xl space-y-3.5 mb-10 sm:mb-12">
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200">
             <span className="typography-label text-blue-700">Portfolio & Case Studies</span>
           </div>
@@ -93,8 +93,6 @@ export default async function ProjectsPage() {
               TECHNICAL CASE STUDIES
             </span>
           </h1>
-
-
 
           <p className="typography-body-lg text-slate-600">
             Real architectural breakdowns of production AI automation systems, high-converting email marketing infrastructures, and scalable full-stack web platforms engineered by our 3 specialists.
