@@ -85,7 +85,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="relative bg-transparent border-t border-slate-200/90 pt-12 pb-8 sm:pt-14 sm:pb-8 overflow-hidden text-slate-700"
+      className="relative bg-[#F8FAFC] border-t border-slate-200/90 pt-12 pb-8 sm:pt-14 sm:pb-8 overflow-hidden text-slate-700"
       role="contentinfo"
       aria-label="Site footer"
     >
@@ -215,4 +215,3 @@ export default function Footer() {
     </footer>
   );
 }
-

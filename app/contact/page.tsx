@@ -238,7 +238,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Left Column: Contact Info Card (Light Theme) */}
           <div className="lg:col-span-5 h-full">
-            <div className="bg-transparent border border-slate-200/90 rounded-3xl p-8 sm:p-10 text-[#0F172A] h-full flex flex-col justify-between shadow-sm relative overflow-hidden">
+            <div className="bg-[#F8FAFC] border border-slate-200/90 rounded-3xl p-8 sm:p-10 text-[#0F172A] h-full flex flex-col justify-between shadow-sm relative overflow-hidden">
               <div className="relative z-10 space-y-10">
                 <div className="space-y-2">
                   <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0F172A]">
@@ -337,4 +337,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

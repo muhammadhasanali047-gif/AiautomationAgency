@@ -112,7 +112,7 @@ export default function SkillsPage() {
             return (
               <div
                 key={cat.name}
-                className="rounded-3xl p-8 sm:p-10 bg-transparent border border-slate-200/90 shadow-sm"
+                className="rounded-3xl p-8 sm:p-10 bg-[#F8FAFC] border border-slate-200/90 shadow-sm"
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-slate-200 gap-4">
                   <div className="flex items-center gap-4">
@@ -172,4 +172,3 @@ export default function SkillsPage() {
     </div>
   );
 }
-

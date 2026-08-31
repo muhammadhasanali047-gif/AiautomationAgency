@@ -13,7 +13,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
   }
 
   return (
-    <section className="relative py-24 bg-transparent border-t border-slate-200/80 overflow-hidden">
+    <section className="relative py-24 bg-[#F8FAFC] border-t border-slate-200/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -160,4 +160,3 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
     </section>
   );
 }
-

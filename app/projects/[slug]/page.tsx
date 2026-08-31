@@ -147,7 +147,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </div>
 
         {/* Media / Screenshots Section */}
-        <div className="mb-14 rounded-3xl bg-transparent border border-slate-200/90 overflow-hidden shadow-sm">
+        <div className="mb-14 rounded-3xl bg-[#F8FAFC] border border-slate-200/90 overflow-hidden shadow-sm">
           {project.screenshots && project.screenshots.length > 0 ? (
             <div className="grid grid-cols-1 gap-4 p-4">
               {project.screenshots.map((shot, idx) => (
@@ -176,7 +176,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         {/* Main Content Sections: Problem, Solution, Architecture, Features */}
         <div className="space-y-10">
           {/* Overview */}
-          <div className="rounded-3xl p-8 bg-transparent border border-slate-200/90 space-y-4 shadow-sm">
+          <div className="rounded-3xl p-8 bg-[#F8FAFC] border border-slate-200/90 space-y-4 shadow-sm">
             <h2 className="text-xl font-bold text-[#0F172A] tracking-tight flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
               System Overview
@@ -213,7 +213,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
           {/* Key Features */}
           {project.key_features && project.key_features.length > 0 && (
-            <div className="rounded-3xl p-8 bg-transparent border border-slate-200/90 space-y-6 shadow-sm">
+            <div className="rounded-3xl p-8 bg-[#F8FAFC] border border-slate-200/90 space-y-6 shadow-sm">
               <h2 className="text-xl font-bold text-[#0F172A] tracking-tight flex items-center gap-2.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-purple-600" />
                 Key Architectural Features
@@ -248,7 +248,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           {/* Challenges & Outcome */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {project.challenges && (
-              <div className="p-8 rounded-3xl bg-transparent border border-slate-200/90 space-y-3 shadow-sm">
+              <div className="p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200/90 space-y-3 shadow-sm">
                 <h4 className="text-base font-bold text-[#0F172A]">Technical Complexities Overcome</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">{project.challenges}</p>
               </div>
