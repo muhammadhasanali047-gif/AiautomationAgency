@@ -71,15 +71,13 @@ export default function Capabilities() {
     <section className="relative py-16 sm:py-20 bg-[#FFFFFF] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-5">
-          <div className="space-y-2.5">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200">
-              <span className="typography-label text-blue-700">Core Capabilities</span>
-            </div>
-            <h2 className="typography-h2">
-              SERVICES & SOLUTIONS
-            </h2>
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-blue-700">Core Capabilities</span>
           </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#0F172A]">
+            SERVICES & SOLUTIONS
+          </h2>
         </div>
 
         {/* 4 Focused Capability Cards */}
@@ -93,24 +91,24 @@ export default function Capabilities() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="group relative rounded-3xl p-6 bg-white border border-slate-200/90 hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between"
+                className="group relative rounded-[20px] p-5 sm:p-6 bg-white border border-slate-200/90 hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between"
               >
                 <div>
                   {/* Top Number & Icon */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-2xl font-bold text-slate-300 group-hover:text-blue-600 transition-colors">
+                  <div className="flex items-center justify-between mb-3.5">
+                    <span className="font-mono text-base font-bold text-slate-300 group-hover:text-blue-600 transition-colors">
                       {svc.number}
                     </span>
-                    <div className={`w-10 h-10 rounded-2xl border flex items-center justify-center ${svc.color} group-hover:scale-110 transition-transform shadow-sm`}>
-                      <Icon className="w-5 h-5" />
+                    <div className={`w-8 h-8 rounded-xl border flex items-center justify-center ${svc.color} group-hover:scale-110 transition-transform shadow-sm`}>
+                      <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <h3 className="typography-h3 text-lg sm:text-xl mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="font-bold text-base sm:text-lg mb-2 text-[#0F172A] group-hover:text-blue-600 transition-colors leading-snug">
                     {svc.title}
                   </h3>
 
-                  <p className="typography-body-sm text-slate-600 mb-4">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
                     {svc.description}
                   </p>
                 </div>
@@ -118,8 +116,8 @@ export default function Capabilities() {
                 {/* Bullet highlights */}
                 <div className="pt-3.5 border-t border-slate-100 space-y-2">
                   {svc.highlights.map((item) => (
-                    <div key={item} className="flex items-center gap-2 typography-badge text-slate-600">
-                      <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-600 to-orange-500 shrink-0" />
+                    <div key={item} className="flex items-start gap-2 text-[11px] font-medium text-slate-600 leading-snug">
+                      <span className="w-1.5 h-1.5 mt-1 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
