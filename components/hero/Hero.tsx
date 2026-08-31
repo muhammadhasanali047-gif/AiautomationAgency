@@ -76,7 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.3 }}
-            className="flex flex-wrap items-center justify-start gap-4 pt-2"
+            className="flex flex-wrap items-center justify-start gap-4 -mt-1"
           >
             <Link
               href="/contact"
