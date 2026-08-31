@@ -109,15 +109,15 @@ export default function TeamMemberCard({ member, onSelect }: TeamMemberCardProps
         {/* Member Profile Details */}
         <div className="space-y-2">
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-[#0F172A] tracking-tight group-hover:text-blue-600 transition-colors">
+            <h3 className="text-lg sm:text-xl font-bold text-[#0F172A] tracking-tight group-hover:text-blue-600 transition-colors leading-snug">
               {member.name}
             </h3>
-            <p className="text-xs sm:text-sm font-semibold text-blue-600 mt-0.5">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-wide text-blue-600 mt-1">
               {member.role}
             </p>
           </div>
 
-          <p className="typography-body-sm text-slate-600 line-clamp-3">
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3">
             {member.description}
           </p>
         </div>
@@ -130,13 +130,13 @@ export default function TeamMemberCard({ member, onSelect }: TeamMemberCardProps
           {member.skills.slice(0, 5).map((skill) => (
             <span
               key={skill}
-              className="typography-badge px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200/80 text-slate-700 group-hover:border-slate-300 transition-colors"
+              className="text-[10px] font-medium px-2 py-1 rounded-lg bg-slate-50 border border-slate-200/80 text-slate-700 group-hover:border-slate-300 transition-colors"
             >
               {skill}
             </span>
           ))}
           {member.skills.length > 5 && (
-            <span className="typography-badge px-2 py-1 rounded-lg text-slate-500">
+            <span className="text-[10px] font-medium px-2 py-1 rounded-lg text-slate-500">
               +{member.skills.length - 5}
             </span>
           )}

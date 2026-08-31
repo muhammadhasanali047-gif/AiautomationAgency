@@ -16,16 +16,16 @@ export default function TeamSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-2.5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200">
-            <span className="typography-label text-blue-700">The Team Behind NexaCore</span>
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-blue-700">The Team Behind NexaCore</span>
           </div>
 
-          <h2 className="typography-h2">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#0F172A]">
             MEET OUR SPECIALISTS
           </h2>
 
-          <p className="typography-body text-slate-600">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
             Three specialists. One mission — building intelligent digital systems that automate, connect and scale modern businesses.
           </p>
         </div>
