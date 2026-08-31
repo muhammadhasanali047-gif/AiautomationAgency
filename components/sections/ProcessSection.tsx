@@ -80,7 +80,7 @@ export default function ProcessSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="relative rounded-[20px] p-5 sm:p-6 bg-[#F8FAFC] border border-slate-200/90 hover:border-blue-300 hover:bg-white transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between group"
+                className="relative rounded-[20px] p-5 sm:p-6 bg-transparent border border-slate-200/90 hover:border-blue-300 hover:bg-white transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between group"
               >
                 <div>
                   {/* Step number badge & icon */}
@@ -113,3 +113,4 @@ export default function ProcessSection() {
     </section>
   );
 }
+

@@ -59,7 +59,7 @@ export default function AboutPage() {
         {/* Core Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 sm:mb-14">
           {/* Card 1 */}
-          <div className="rounded-3xl p-6 sm:p-8 bg-[#F8FAFC] border border-slate-200/90 shadow-sm space-y-3.5">
+          <div className="rounded-3xl p-6 sm:p-8 bg-transparent border border-slate-200/90 shadow-sm space-y-3.5">
             <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shadow-sm">
               <Brain className="w-5 h-5" />
             </div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
           </div>
 
           {/* Card 2 */}
-          <div className="rounded-3xl p-6 sm:p-8 bg-[#F8FAFC] border border-slate-200/90 shadow-sm space-y-3.5">
+          <div className="rounded-3xl p-6 sm:p-8 bg-transparent border border-slate-200/90 shadow-sm space-y-3.5">
             <div className="w-11 h-11 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 shadow-sm">
               <Cpu className="w-5 h-5" />
             </div>
@@ -141,3 +141,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

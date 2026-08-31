@@ -41,7 +41,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#FFFFFF] text-[#0F172A] font-sans selection:bg-blue-600/15 selection:text-blue-700;
+    @apply bg-transparent text-[#0F172A] font-sans selection:bg-blue-600/15 selection:text-blue-700;
     font-feature-settings: "rlig" 1, "calt" 1, "cv02" 1, "cv03" 1, "cv04" 1;
     overflow-x: hidden;
   }
@@ -177,7 +177,7 @@
 
 /* Soft White-First Background Mesh */
 .nexa-mesh-bg {
-  background-color: #FFFFFF;
+  background-color: transparent;
   background-image: 
     radial-gradient(at 15% 15%, rgba(37, 99, 235, 0.05) 0px, transparent 45%),
     radial-gradient(at 85% 15%, rgba(124, 58, 237, 0.04) 0px, transparent 40%),

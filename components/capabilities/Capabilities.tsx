@@ -68,7 +68,7 @@ const services = [
 
 export default function Capabilities() {
   return (
-    <section className="relative py-16 sm:py-20 bg-[#FFFFFF] overflow-hidden">
+    <section className="relative py-16 sm:py-20 bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-3">
@@ -145,3 +145,4 @@ export default function Capabilities() {
     </section>
   );
 }
+

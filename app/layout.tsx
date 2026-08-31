@@ -65,10 +65,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable}`}>
       <body
-        className="font-sans bg-[#FFFFFF] text-[#0F172A] min-h-screen flex flex-col antialiased selection:bg-blue-600/15 selection:text-blue-700"
+        className="font-sans bg-slate-50 text-[#0F172A] min-h-screen flex flex-col antialiased selection:bg-blue-600/15 selection:text-blue-700 relative"
       >
+        {/* Global Ambient Colorful Background */}
+        <div className="fixed inset-0 pointer-events-none -z-50 overflow-hidden bg-slate-50">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-400/10 blur-[120px]" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-cyan-400/10 blur-[120px]" />
+          <div className="absolute top-[40%] left-[60%] w-[30%] h-[30%] rounded-full bg-purple-400/10 blur-[100px]" />
+          {/* Subtle Grid Overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a08_1px,transparent_1px),linear-gradient(to_bottom,#0f172a08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+        </div>
+
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 relative z-10">{children}</main>
         <Footer />
         <FloatingAssistant />
         <CustomCursor />

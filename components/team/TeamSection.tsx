@@ -9,7 +9,7 @@ export default function TeamSection() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
   return (
-    <section className="relative py-16 sm:py-20 bg-[#FFFFFF] border-t border-slate-200/80 overflow-hidden" id="team">
+    <section className="relative py-16 sm:py-20 bg-transparent border-t border-slate-200/80 overflow-hidden" id="team">
       {/* Subtle Ambient Brand Glows */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2" />
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2" />
@@ -51,3 +51,4 @@ export default function TeamSection() {
     </section>
   );
 }
+

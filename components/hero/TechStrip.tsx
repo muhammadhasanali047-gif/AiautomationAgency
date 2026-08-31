@@ -175,7 +175,7 @@ const trackTwoSkills = [
 
 export default function TechStrip() {
   return (
-    <section className="relative py-10 sm:py-12 border-y border-slate-200/80 bg-[#F8FAFC] overflow-hidden">
+    <section className="relative py-10 sm:py-12 border-y border-slate-200/80 bg-transparent overflow-hidden">
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 text-center space-y-1.5">
         <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-white border border-slate-200 shadow-xs">
@@ -264,3 +264,4 @@ export default function TechStrip() {
     </section>
   );
 }
+

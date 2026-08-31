@@ -172,7 +172,7 @@ export default async function ServicesPage() {
               <div
                 key={service.id}
                 id={service.id}
-                className="rounded-[20px] p-5 sm:p-7 bg-[#F8FAFC] border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
+                className="rounded-[20px] p-5 sm:p-7 bg-transparent border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
               >
                 <div className="flex flex-col gap-6 flex-1">
                   {/* Top overview */}
@@ -289,3 +289,4 @@ export default async function ServicesPage() {
     </div>
   );
 }
+

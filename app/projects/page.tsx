@@ -108,7 +108,7 @@ export default async function ProjectsPage() {
             return (
               <div
                 key={project.id}
-                className="group rounded-3xl bg-[#F8FAFC] border border-slate-200/90 hover:border-blue-300 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1"
+                className="group rounded-3xl bg-transparent border border-slate-200/90 hover:border-blue-300 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1"
               >
                 {/* Media Header with Specialist Attribution */}
                 <div className="relative aspect-square sm:aspect-[4/3] w-full bg-gradient-to-br from-slate-100 to-slate-50 border-b border-slate-200/80 overflow-hidden flex items-center justify-center p-6">
@@ -244,3 +244,4 @@ export default async function ProjectsPage() {
     </div>
   );
 }
+

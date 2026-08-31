@@ -31,7 +31,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
           {testimonials.map((item) => (
             <div
               key={item.id}
-              className="rounded-3xl p-8 bg-[#F8FAFC] border border-slate-200/90 shadow-sm flex flex-col justify-between"
+              className="rounded-3xl p-8 bg-transparent border border-slate-200/90 shadow-sm flex flex-col justify-between"
             >
               <div className="space-y-4">
                 {/* Rating stars */}
@@ -72,3 +72,4 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
     </section>
   );
 }
+
