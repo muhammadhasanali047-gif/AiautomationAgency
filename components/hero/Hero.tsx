@@ -123,17 +123,17 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="backdrop-blur-md bg-white/70 border border-slate-200/80 rounded-3xl p-7 shadow-2xl relative overflow-hidden"
+            className="backdrop-blur-md bg-white/70 border border-slate-200/80 rounded-3xl p-6 shadow-2xl relative overflow-hidden"
           >
             {/* Glow behind the nodes */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px]" />
 
-            <div className="relative space-y-5">
+            <div className="relative space-y-3">
               
               {/* Node 1: Trigger */}
-              <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm flex items-center gap-4 relative z-10 transition-transform hover:scale-[1.02]">
-                <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-orange-500 shrink-0 border border-orange-100">
-                  <Zap className="w-6 h-6" />
+              <div className="bg-white rounded-2xl p-3.5 border border-slate-100 shadow-sm flex items-center gap-4 relative z-10 transition-transform hover:scale-[1.02]">
+                <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-500 shrink-0 border border-orange-100">
+                  <Zap className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-800 text-sm">Lead Received</h3>
@@ -142,20 +142,20 @@ export default function Hero() {
               </div>
 
               {/* Animated Connector */}
-              <div className="w-1 h-8 bg-gradient-to-b from-orange-100 to-blue-100 mx-auto rounded-full overflow-hidden relative">
+              <div className="w-1 h-5 bg-gradient-to-b from-orange-100 to-blue-100 mx-auto rounded-full overflow-hidden relative">
                 <motion.div
-                  animate={{ y: [ -32, 32 ] }}
+                  animate={{ y: [ -20, 20 ] }}
                   transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
                   className="w-full h-1/2 bg-blue-400 rounded-full"
                 />
               </div>
 
               {/* Node 2: AI Processing */}
-              <div className="bg-white rounded-2xl p-4 border border-blue-200 shadow-md shadow-blue-500/5 flex items-center gap-4 relative z-10 transition-transform hover:scale-[1.02]">
+              <div className="bg-white rounded-2xl p-3.5 border border-blue-200 shadow-md shadow-blue-500/5 flex items-center gap-4 relative z-10 transition-transform hover:scale-[1.02]">
                 <div className="relative">
                    <div className="absolute inset-0 bg-blue-400 rounded-xl animate-ping opacity-25"></div>
-                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white shrink-0 relative z-10 shadow-sm">
-                     <Bot className="w-6 h-6" />
+                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white shrink-0 relative z-10 shadow-sm">
+                     <Bot className="w-5 h-5" />
                    </div>
                 </div>
                 <div className="flex-1">
@@ -171,18 +171,18 @@ export default function Hero() {
               </div>
 
               {/* Animated Connector */}
-              <div className="w-1 h-8 bg-gradient-to-b from-blue-100 to-emerald-100 mx-auto rounded-full overflow-hidden relative">
+              <div className="w-1 h-5 bg-gradient-to-b from-blue-100 to-emerald-100 mx-auto rounded-full overflow-hidden relative">
                 <motion.div
-                  animate={{ y: [ -32, 32 ] }}
+                  animate={{ y: [ -20, 20 ] }}
                   transition={{ repeat: Infinity, duration: 1.5, ease: "linear", delay: 0.5 }}
                   className="w-full h-1/2 bg-emerald-400 rounded-full"
                 />
               </div>
 
               {/* Node 3: Output */}
-              <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm flex items-center gap-4 relative z-10 transition-transform hover:scale-[1.02]">
-                <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-500 shrink-0 border border-emerald-100">
-                  <Database className="w-6 h-6" />
+              <div className="bg-white rounded-2xl p-3.5 border border-slate-100 shadow-sm flex items-center gap-4 relative z-10 transition-transform hover:scale-[1.02]">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-500 shrink-0 border border-emerald-100">
+                  <Database className="w-5 h-5" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-slate-800 text-sm">Synced to CRM</h3>
