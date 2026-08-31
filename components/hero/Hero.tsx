@@ -97,17 +97,6 @@ export default function Hero() {
 
         {/* RIGHT COLUMN: AI Workflow Mockup */}
         <div className="relative hidden lg:block w-full max-w-lg mx-auto lg:-mt-12 xl:-mt-16">
-          {/* Floating Badges */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-            className="absolute -top-6 -right-6 z-20 bg-white border border-slate-200 px-4 py-2.5 rounded-xl shadow-lg shadow-slate-200/50 flex items-center gap-2"
-          >
-            <span className="text-xl">⚡</span>
-            <span className="text-sm font-bold text-slate-800">99.9% Uptime</span>
-          </motion.div>
-
 
 
           {/* Main Glassmorphism Card */}
