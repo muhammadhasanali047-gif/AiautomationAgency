@@ -3,25 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Bot, Code2, Workflow, Mail } from 'lucide-react';
-
-const FloatingBadge = ({ icon: Icon, label, delay, positionClass }: { icon: any, label: string, delay: number, positionClass: string }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    animate={{ opacity: 1, scale: 1, y: [0, -20, 0] }}
-    transition={{
-      opacity: { duration: 1, delay },
-      scale: { duration: 1, delay },
-      y: { duration: 5, repeat: Infinity, ease: 'easeInOut', delay: delay + 0.5 },
-    }}
-    className={`hidden lg:flex absolute items-center gap-3 px-4 py-2.5 bg-white/70 backdrop-blur-md border border-slate-200/50 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] pointer-events-none z-0 ${positionClass}`}
-  >
-    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white shadow-md">
-      <Icon size={20} strokeWidth={2.5} />
-    </div>
-    <span className="text-sm font-black text-slate-800 tracking-wide">{label}</span>
-  </motion.div>
-);
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -33,25 +15,10 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] bg-gradient-to-r from-blue-500/10 via-purple-500/5 to-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex justify-start">
         
-        {/* LEFT COLUMN: Visuals / Animation */}
-        <div className="relative hidden lg:flex h-[500px] w-full items-center justify-center">
-          {/* A glowing central core to tie the badges together visually */}
-          <div className="absolute w-32 h-32 bg-blue-600/10 rounded-full blur-xl animate-pulse" />
-          <div className="absolute w-16 h-16 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30 z-10">
-            <span className="text-white font-black text-xl tracking-tighter">Nexa</span>
-          </div>
-
-          {/* Floating Badges arranged in an orbit-like cluster */}
-          <FloatingBadge icon={Workflow} label="Automated Workflows" delay={0.2} positionClass="top-[10%] left-[5%] -rotate-3" />
-          <FloatingBadge icon={Bot} label="AI Agents" delay={0.4} positionClass="top-[15%] right-[0%] rotate-2" />
-          <FloatingBadge icon={Code2} label="Custom SaaS" delay={0.6} positionClass="bottom-[15%] left-[2%] rotate-3" />
-          <FloatingBadge icon={Mail} label="Email Infrastructure" delay={0.8} positionClass="bottom-[10%] right-[5%] -rotate-2" />
-        </div>
-
-        {/* RIGHT COLUMN: Text */}
-        <div className="space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
+        {/* TEXT COLUMN: Left Aligned */}
+        <div className="space-y-6 text-left flex flex-col items-start max-w-4xl">
           {/* Tagline Pill */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
