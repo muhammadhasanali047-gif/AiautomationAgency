@@ -161,16 +161,13 @@ export default function FloatingAssistant() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 text-white shadow-xl shadow-blue-600/30 hover:shadow-blue-600/50 border border-white/20 transition-all duration-300"
+            className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 text-white shadow-2xl shadow-blue-600/40 hover:shadow-blue-600/60 border border-white/20 transition-all duration-300"
             aria-label="Open NexaCore AI Assistant"
           >
             <div className="relative">
-              <Bot className="w-5 h-5" />
+              <Bot className="w-6 h-6" />
               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full ring-2 ring-blue-600 animate-pulse" />
             </div>
-            <span className="text-sm font-bold tracking-wide hidden sm:inline-block">
-              NexaCore Assistant
-            </span>
           </motion.button>
         )}
       </AnimatePresence>
