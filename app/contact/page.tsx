@@ -220,18 +220,15 @@ export default function ContactPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          {/* Left Column: Dark Blue Contact Info Card */}
+          {/* Left Column: Contact Info Card (Light Theme) */}
           <div className="lg:col-span-5 h-full">
-            <div className="bg-[#1E293B] rounded-3xl p-8 sm:p-10 text-white h-full flex flex-col justify-between shadow-2xl relative overflow-hidden">
-              {/* Background gradient/glow inside the card */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[60px] pointer-events-none" />
-
+            <div className="bg-[#F8FAFC] border border-slate-200/90 rounded-3xl p-8 sm:p-10 text-[#0F172A] h-full flex flex-col justify-between shadow-sm relative overflow-hidden">
               <div className="relative z-10 space-y-10">
                 <div className="space-y-2">
-                  <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                  <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0F172A]">
                     NexaCore HQ
                   </h1>
-                  <p className="text-slate-400 text-sm">
+                  <p className="text-slate-500 text-sm font-medium">
                     Serving clients globally
                   </p>
                 </div>
@@ -239,23 +236,23 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   {/* Address */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-cyan-400 shrink-0">
+                    <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div className="mt-1">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Office Address</p>
-                      <p className="text-sm font-semibold text-white">Multan / South Punjab, Pakistan</p>
+                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Office Address</p>
+                      <p className="text-sm font-bold text-[#0F172A]">Multan / South Punjab, Pakistan</p>
                     </div>
                   </div>
 
                   {/* Phone */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-cyan-400 shrink-0">
+                    <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div className="mt-1">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Phone / WhatsApp</p>
-                      <a href="https://wa.me/923000000000" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white hover:text-cyan-400 transition-colors">
+                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Phone / WhatsApp</p>
+                      <a href="https://wa.me/923000000000" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-[#0F172A] hover:text-blue-600 transition-colors">
                         +92 300 0000000
                       </a>
                     </div>
@@ -263,12 +260,12 @@ export default function ContactPage() {
 
                   {/* Email */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-cyan-400 shrink-0">
+                    <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div className="mt-1">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Email Inquiry</p>
-                      <a href="mailto:contact@nexacoreautomations.com" className="text-sm font-semibold text-white hover:text-cyan-400 transition-colors">
+                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Email Inquiry</p>
+                      <a href="mailto:contact@nexacoreautomations.com" className="text-sm font-bold text-[#0F172A] hover:text-blue-600 transition-colors">
                         contact@nexacoreautomations.com
                       </a>
                     </div>
@@ -276,12 +273,12 @@ export default function ContactPage() {
 
                   {/* Hours */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-cyan-400 shrink-0">
+                    <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
                       <Clock className="w-5 h-5" />
                     </div>
                     <div className="mt-1">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Working Hours</p>
-                      <p className="text-sm font-semibold text-white">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Working Hours</p>
+                      <p className="text-sm font-bold text-[#0F172A]">Mon - Sat: 9:00 AM - 7:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -293,7 +290,7 @@ export default function ContactPage() {
                   href="https://wa.me/923000000000"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-[#10B981] hover:bg-[#059669] text-white font-bold py-4 rounded-xl shadow-lg shadow-[#10B981]/20 transition-all duration-200 flex items-center justify-center gap-2 hover:-translate-y-0.5"
+                  className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-4 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2 hover:-translate-y-0.5"
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span>DIRECT WHATSAPP CHAT</span>
