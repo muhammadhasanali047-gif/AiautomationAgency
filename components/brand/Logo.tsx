@@ -44,8 +44,8 @@ export default function Logo({
         <BrandMark size={currentMarkSize * 1.4} monochrome={monochrome} className="mb-3" />
         <div className="flex flex-col items-end">
           <div className="flex items-baseline">
-            <span className={`font-black tracking-tight leading-none ${monochrome ? 'text-current' : 'text-[#0F172A]'} ${currentTextSize.N}`}>N</span>
-            <span className={`font-black tracking-tight leading-none ${monochrome ? 'text-current' : 'text-[#0F172A]'} ${currentTextSize.rest}`}>exa</span>
+            <span className={`font-black tracking-tight leading-none ${monochrome ? 'text-current' : 'text-white'} ${currentTextSize.N}`}>N</span>
+            <span className={`font-black tracking-tight leading-none ${monochrome ? 'text-current' : 'text-white'} ${currentTextSize.rest}`}>exa</span>
             <span
               className={`font-black tracking-tight leading-none ${currentTextSize.rest} ${
                 monochrome
@@ -57,7 +57,7 @@ export default function Logo({
             </span>
           </div>
           <div className="flex justify-end mt-0.5">
-            <span className={`uppercase font-bold ${monochrome ? 'text-current opacity-70' : 'text-slate-500'} ${currentTextSize.auto}`}>
+            <span className={`uppercase font-bold ${monochrome ? 'text-current opacity-70' : 'text-slate-400'} ${currentTextSize.auto}`}>
               AUTOMATION
             </span>
           </div>
@@ -80,8 +80,8 @@ export default function Logo({
       <div className="flex flex-col pt-1">
         {/* Main Wordmark: N (Large) + exa (Navy) + core (Tech Gradient) */}
         <div className="flex items-baseline">
-          <span className={`font-black tracking-tighter leading-none ${monochrome ? 'text-current' : 'text-[#0F172A]'} ${currentTextSize.N}`}>N</span>
-          <span className={`font-black tracking-tight leading-none ml-[1px] ${monochrome ? 'text-current' : 'text-[#0F172A]'} ${currentTextSize.rest}`}>exa</span>
+          <span className={`font-black tracking-tighter leading-none ${monochrome ? 'text-current' : 'text-white'} ${currentTextSize.N}`}>N</span>
+          <span className={`font-black tracking-tight leading-none ml-[1px] ${monochrome ? 'text-current' : 'text-white'} ${currentTextSize.rest}`}>exa</span>
           <span
             className={`font-black tracking-tight leading-none ${currentTextSize.rest} ${
               monochrome
@@ -95,7 +95,7 @@ export default function Logo({
 
         {/* Subtitle: AUTOMATION aligned to the right (under core) */}
         <div className="flex justify-end mt-[1px]">
-          <span className={`font-bold uppercase ${monochrome ? 'text-current opacity-70' : 'text-slate-500'} ${currentTextSize.auto}`}>
+          <span className={`font-bold uppercase ${monochrome ? 'text-current opacity-70' : 'text-slate-400'} ${currentTextSize.auto}`}>
             AUTOMATION
           </span>
         </div>
